@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formation — [Titre de votre formation]</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .gradient-text {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glow-btn {
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+      transition: all 0.3s ease;
+    }
+    .glow-btn:hover {
+      box-shadow: 0 0 50px rgba(245, 158, 11, 0.7);
+      transform: translateY(-2px);
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      border-color: #f59e0b;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .progress-bar { animation: load 2s ease forwards; }
+    @keyframes load { from { width: 0; } }
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .sticky-cta.show {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-[#0a0a0a] text-white">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <span class="font-bold text-lg text-amber-400">[Votre Nom]</span>
+      <a href="#offre" class="bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm px-5 py-2 rounded-full transition-all">
+        Je veux accéder →
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════════ -->
+  <section class="min-h-screen flex items-center pt-20 pb-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-medium px-4 py-2 rounded-full mb-8">
+        <span class="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></span>
+        [Niche — Ex: Marketing Digital · E-Commerce · Freelance]
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+        Apprenez à
+        <span class="gradient-text"> [Résultat principal] </span>
+        en [X jours/semaines]
+      </h1>
+
+      <!-- Sous-titre -->
+      <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Même si vous partez de zéro. Même si vous avez essayé et échoué. 
+        La méthode exacte utilisée par [X] apprenants pour [bénéfice concret].
+      </p>
+
+      <!-- Preuves sociales rapides -->
+      <div class="flex flex-wrap items-center justify-center gap-6 mb-10 text-sm text-gray-400">
+        <div class="flex items-center gap-2">
+          <div class="flex -space-x-2">
+            <div class="w-7 h-7 rounded-full bg-amber-500 border-2 border-[#0a0a0a]"></div>
+            <div class="w-7 h-7 rounded-full bg-orange-500 border-2 border-[#0a0a0a]"></div>
+            <div class="w-7 h-7 rounded-full bg-red-500 border-2 border-[#0a0a0a]"></div>
+          </div>
+          <span><strong class="text-white">+[XXX]</strong> apprenants</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="text-amber-400">★★★★★</span>
+          <span><strong class="text-white">4.9/5</strong> (XX avis)</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="text-green-400">✓</span>
+          <span>Accès immédiat après paiement</span>
+        </div>
+      </div>
+
+      <!-- CTA Principal -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#offre" class="glow-btn bg-amber-500 hover:bg-amber-400 text-black font-black text-lg px-10 py-5 rounded-2xl w-full sm:w-auto text-center">
+          Accéder à la formation →
+        </a>
+        <a href="#programme" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          Voir le programme complet ↓
+        </a>
+      </div>
+
+      <!-- Garantie rapide -->
+      <p class="text-gray-500 text-xs mt-6">
+        🔒 Paiement sécurisé · Mobile Money accepté · Accès à vie
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       2. PROBLÈME
+  ═══════════════════════════════════════════ -->
+  <section class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-3xl mx-auto">
+      <div class="fade-in">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4 text-center">Ça vous parle ?</p>
+        <h2 class="text-3xl md:text-4xl font-black text-center mb-12">
+          Vous aussi vous vous reconnaissez<br />dans cette situation ?
+        </h2>
+      </div>
+
+      <div class="space-y-4 fade-in">
+        <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-5 card-hover">
+          <span class="text-2xl mt-0.5">😓</span>
+          <div>
+            <p class="font-semibold text-white mb-1">[Problème #1 — douleur principale]</p>
+            <p class="text-gray-400 text-sm">Ex: Vous passez des heures à chercher des clients sans résultats concrets...</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-5 card-hover">
+          <span class="text-2xl mt-0.5">😤</span>
+          <div>
+            <p class="font-semibold text-white mb-1">[Problème #2 — frustration]</p>
+            <p class="text-gray-400 text-sm">Ex: Vous avez regardé des tonnes de tutoriels YouTube mais rien ne fonctionne vraiment...</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-5 card-hover">
+          <span class="text-2xl mt-0.5">😰</span>
+          <div>
+            <p class="font-semibold text-white mb-1">[Problème #3 — peur / blocage]</p>
+            <p class="text-gray-400 text-sm">Ex: Vous avez peur d'investir sans savoir si ça va vraiment marcher pour vous...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-amber-500/10 border border-amber-500/30 rounded-2xl fade-in">
+        <p class="text-white font-semibold text-lg text-center">
+          Si vous avez coché au moins une case... <br />
+          <span class="text-amber-400">cette formation a été créée exactement pour vous.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       3. SOLUTION / PRÉSENTATION
+  ═══════════════════════════════════════════ -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="fade-in text-center mb-16">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">La solution</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-6">
+          Présentation de la formation<br />
+          <span class="gradient-text">"[Nom de la Formation]"</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+          Un programme [complet / intensif / pratique] de [X modules / X heures] pour vous amener de 
+          [point A] à [point B], pas à pas, sans vous noyer dans la théorie.
+        </p>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
+        <div class="bg-[#0f0f0f] border border-white/10 rounded-2xl p-6 text-center">
+          <p class="text-3xl font-black text-amber-400 mb-1">[X]h</p>
+          <p class="text-gray-400 text-sm">de contenu vidéo</p>
+        </div>
+        <div class="bg-[#0f0f0f] border border-white/10 rounded-2xl p-6 text-center">
+          <p class="text-3xl font-black text-amber-400 mb-1">[X]</p>
+          <p class="text-gray-400 text-sm">modules pratiques</p>
+        </div>
+        <div class="bg-[#0f0f0f] border border-white/10 rounded-2xl p-6 text-center">
+          <p class="text-3xl font-black text-amber-400 mb-1">[X]</p>
+          <p class="text-gray-400 text-sm">ressources bonus</p>
+        </div>
+        <div class="bg-[#0f0f0f] border border-white/10 rounded-2xl p-6 text-center">
+          <p class="text-3xl font-black text-amber-400 mb-1">∞</p>
+          <p class="text-gray-400 text-sm">accès à vie</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       4. PROGRAMME
+  ═══════════════════════════════════════════ -->
+  <section id="programme" class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-3xl mx-auto">
+      <div class="fade-in text-center mb-12">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">Le programme</p>
+        <h2 class="text-3xl md:text-4xl font-black">Ce que vous allez apprendre</h2>
+      </div>
+
+      <div class="space-y-4 fade-in">
+
+        <!-- Module -->
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-amber-500/20 border border-amber-500/40 rounded-xl flex items-center justify-center shrink-0">
+              <span class="text-amber-400 font-bold text-sm">01</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-white mb-1">[Titre du module 1]</h3>
+              <p class="text-gray-400 text-sm mb-3">Ex: Les fondations — comprendre les bases avant d'agir</p>
+              <ul class="space-y-1">
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 1 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 2 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 3 : [titre]</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-amber-500/20 border border-amber-500/40 rounded-xl flex items-center justify-center shrink-0">
+              <span class="text-amber-400 font-bold text-sm">02</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-white mb-1">[Titre du module 2]</h3>
+              <p class="text-gray-400 text-sm mb-3">Ex: La stratégie — construire un plan béton</p>
+              <ul class="space-y-1">
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 1 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 2 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 3 : [titre]</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-amber-500/20 border border-amber-500/40 rounded-xl flex items-center justify-center shrink-0">
+              <span class="text-amber-400 font-bold text-sm">03</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-white mb-1">[Titre du module 3]</h3>
+              <p class="text-gray-400 text-sm mb-3">Ex: L'exécution — passer à l'action et générer vos premiers résultats</p>
+              <ul class="space-y-1">
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 1 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 2 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 3 : [titre]</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 card-hover">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-amber-500/20 border border-amber-500/40 rounded-xl flex items-center justify-center shrink-0">
+              <span class="text-amber-400 font-bold text-sm">04</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-white mb-1">[Titre du module 4]</h3>
+              <p class="text-gray-400 text-sm mb-3">Ex: La croissance — automatiser et scaler vos résultats</p>
+              <ul class="space-y-1">
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 1 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 2 : [titre]</li>
+                <li class="text-gray-500 text-sm flex items-center gap-2"><span class="text-amber-400">›</span> Leçon 3 : [titre]</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       5. FORMATEUR
+  ═══════════════════════════════════════════ -->
+  <section class="py-20 px-4">
+    <div class="max-w-3xl mx-auto fade-in">
+      <div class="text-center mb-12">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">Votre formateur</p>
+        <h2 class="text-3xl md:text-4xl font-black">Qui suis-je ?</h2>
+      </div>
+
+      <div class="bg-[#0f0f0f] border border-white/10 rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8">
+        <!-- Photo placeholder -->
+        <div class="w-32 h-32 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shrink-0 text-4xl font-black text-white">
+          [P]
+        </div>
+        <div>
+          <h3 class="text-xl font-black text-white mb-1">[Votre Prénom Nom]</h3>
+          <p class="text-amber-400 text-sm font-medium mb-4">[Votre titre — Ex: Expert en Marketing Digital]</p>
+          <p class="text-gray-400 text-sm leading-relaxed mb-5">
+            [Votre histoire courte : qui vous êtes, d'où vous venez, quel problème vous avez vous-même résolu 
+            et comment vous avez aidé d'autres personnes à faire de même. Soyez authentique et concret.]
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">✓ [Réalisation 1]</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">✓ [Réalisation 2]</span>
+            <span class="bg-white/5 border border-white/10 text-gray-300 text-xs px-3 py-1.5 rounded-full">✓ [Réalisation 3]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       6. TÉMOIGNAGES
+  ═══════════════════════════════════════════ -->
+  <section class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-4xl mx-auto">
+      <div class="fade-in text-center mb-12">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">Ils ont sauté le pas</p>
+        <h2 class="text-3xl md:text-4xl font-black">Les résultats de nos apprenants</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 fade-in">
+
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 card-hover">
+          <div class="flex text-amber-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 italic">
+            "[Témoignage authentique et spécifique avec un résultat concret. Ex: Grâce à cette formation, 
+            j'ai décroché mon premier client freelance en seulement 3 semaines !]"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center text-black font-bold text-sm">[I]</div>
+            <div>
+              <p class="text-white text-sm font-semibold">[Prénom Nom]</p>
+              <p class="text-gray-500 text-xs">[Ville, Pays]</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0a] border border-amber-500/30 rounded-2xl p-6 card-hover">
+          <div class="flex text-amber-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 italic">
+            "[Deuxième témoignage avec un résultat différent. Variez les profils : débutant, 
+            intermédiaire, personne qui avait déjà essayé d'autres méthodes...]"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm">[F]</div>
+            <div>
+              <p class="text-white text-sm font-semibold">[Prénom Nom]</p>
+              <p class="text-gray-500 text-xs">[Ville, Pays]</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 card-hover">
+          <div class="flex text-amber-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 italic">
+            "[Troisième témoignage. Idéalement quelqu'un de sceptique au départ qui a été 
+            agréablement surpris par les résultats obtenus.]"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-sm">[M]</div>
+            <div>
+              <p class="text-white text-sm font-semibold">[Prénom Nom]</p>
+              <p class="text-gray-500 text-xs">[Ville, Pays]</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       7. OFFRE + PRIX
+  ═══════════════════════════════════════════ -->
+  <section id="offre" class="py-20 px-4">
+    <div class="max-w-2xl mx-auto fade-in">
+      <div class="text-center mb-10">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">L'offre</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">
+          Tout ce que vous recevez<br />
+          <span class="gradient-text">aujourd'hui</span>
+        </h2>
+      </div>
+
+      <div class="bg-[#0f0f0f] border border-amber-500/40 rounded-3xl p-8">
+
+        <!-- Liste des inclus -->
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start gap-3">
+            <span class="text-amber-400 font-bold mt-0.5">✓</span>
+            <div>
+              <p class="text-white font-semibold text-sm">[Nom de la formation complète]</p>
+              <p class="text-gray-500 text-xs">[X] modules · [X] heures de contenu vidéo</p>
+            </div>
+            <span class="ml-auto text-gray-500 text-sm line-through">[XX 000] F</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-amber-400 font-bold mt-0.5">✓</span>
+            <div>
+              <p class="text-white font-semibold text-sm">BONUS 1 — [Nom du bonus]</p>
+              <p class="text-gray-500 text-xs">Ex: Templates prêtes à l'emploi</p>
+            </div>
+            <span class="ml-auto text-gray-500 text-sm line-through">[XX 000] F</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-amber-400 font-bold mt-0.5">✓</span>
+            <div>
+              <p class="text-white font-semibold text-sm">BONUS 2 — [Nom du bonus]</p>
+              <p class="text-gray-500 text-xs">Ex: Accès au groupe privé WhatsApp</p>
+            </div>
+            <span class="ml-auto text-gray-500 text-sm line-through">[XX 000] F</span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-amber-400 font-bold mt-0.5">✓</span>
+            <div>
+              <p class="text-white font-semibold text-sm">Accès à vie + mises à jour gratuites</p>
+              <p class="text-gray-500 text-xs">Toutes les futures améliorations incluses</p>
+            </div>
+            <span class="ml-auto text-gray-500 text-sm line-through">∞</span>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 mb-6">
+          <div class="flex items-baseline justify-between mb-2">
+            <p class="text-gray-400 text-sm">Valeur totale</p>
+            <p class="text-gray-500 line-through text-sm">[XXX 000] FCFA</p>
+          </div>
+          <div class="flex items-baseline justify-between">
+            <p class="text-white font-semibold">Prix de lancement</p>
+            <div class="text-right">
+              <p class="text-4xl font-black text-amber-400">[XX 000]<span class="text-lg"> FCFA</span></p>
+              <p class="text-gray-500 text-xs">Paiement unique · Accès immédiat</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="[LIEN_CHARIOW]" class="glow-btn block bg-amber-500 hover:bg-amber-400 text-black font-black text-xl py-5 rounded-2xl text-center w-full mb-4">
+          Accéder maintenant →
+        </a>
+
+        <!-- Moyens de paiement -->
+        <div class="text-center">
+          <p class="text-gray-500 text-xs mb-2">Paiements acceptés</p>
+          <div class="flex flex-wrap items-center justify-center gap-2">
+            <span class="bg-white/5 text-gray-400 text-xs px-3 py-1 rounded-full">Orange Money</span>
+            <span class="bg-white/5 text-gray-400 text-xs px-3 py-1 rounded-full">Wave</span>
+            <span class="bg-white/5 text-gray-400 text-xs px-3 py-1 rounded-full">MTN MoMo</span>
+            <span class="bg-white/5 text-gray-400 text-xs px-3 py-1 rounded-full">Carte Visa/MC</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Garantie -->
+      <div class="mt-6 bg-white/5 border border-white/10 rounded-2xl p-6 flex items-start gap-4">
+        <span class="text-3xl shrink-0">🔒</span>
+        <div>
+          <p class="text-white font-bold mb-1">Garantie [X] jours satisfait ou remboursé</p>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Si dans les [X] jours suivant votre achat vous n'êtes pas satisfait, 
+            contactez-nous et nous vous remboursons intégralement. Aucune question posée.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       8. FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="py-20 px-4 bg-[#0f0f0f]">
+    <div class="max-w-2xl mx-auto">
+      <div class="fade-in text-center mb-12">
+        <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-4">FAQ</p>
+        <h2 class="text-3xl font-black">Questions fréquentes</h2>
+      </div>
+
+      <div class="space-y-4 fade-in" id="faq">
+
+        <div class="faq-item bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full text-left p-5 flex items-center justify-between" onclick="toggleFaq(this)">
+            <span class="font-semibold text-white text-sm">[Question fréquente 1 — Ex: Je suis débutant complet, est-ce fait pour moi ?]</span>
+            <span class="faq-icon text-amber-400 font-bold shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5">
+            <p class="text-gray-400 text-sm leading-relaxed">
+              [Réponse rassurante et précise. Évitez les généralités — répondez vraiment à la question avec des exemples concrets.]
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full text-left p-5 flex items-center justify-between" onclick="toggleFaq(this)">
+            <span class="font-semibold text-white text-sm">[Question 2 — Ex: Combien de temps faut-il par jour pour suivre la formation ?]</span>
+            <span class="faq-icon text-amber-400 font-bold shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5">
+            <p class="text-gray-400 text-sm leading-relaxed">
+              [Réponse précise avec des exemples.]
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full text-left p-5 flex items-center justify-between" onclick="toggleFaq(this)">
+            <span class="font-semibold text-white text-sm">[Question 3 — Ex: Est-ce que j'ai accès à vie au contenu ?]</span>
+            <span class="faq-icon text-amber-400 font-bold shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5">
+            <p class="text-gray-400 text-sm leading-relaxed">
+              [Réponse précise.]
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full text-left p-5 flex items-center justify-between" onclick="toggleFaq(this)">
+            <span class="font-semibold text-white text-sm">[Question 4 — Ex: Comment se passe le paiement depuis le Sénégal ?]</span>
+            <span class="faq-icon text-amber-400 font-bold shrink-0 ml-4">+</span>
+          </button>
+          <div class="faq-answer hidden px-5 pb-5">
+            <p class="text-gray-400 text-sm leading-relaxed">
+              [Expliquer que le paiement se fait via Chariow, avec Orange Money, Wave, etc.]
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       9. CTA FINAL
+  ═══════════════════════════════════════════ -->
+  <section class="py-24 px-4">
+    <div class="max-w-2xl mx-auto text-center fade-in">
+      <p class="text-amber-400 text-sm font-semibold uppercase tracking-widest mb-6">Dernière chance</p>
+      <h2 class="text-4xl md:text-5xl font-black mb-6">
+        Vous avez deux options<br />devant vous.
+      </h2>
+      <p class="text-gray-400 text-lg mb-4 leading-relaxed">
+        Continuer comme avant, et obtenir les mêmes résultats.
+      </p>
+      <p class="text-white text-lg mb-10 leading-relaxed font-medium">
+        Ou investir aujourd'hui dans <span class="text-amber-400">[Nom de la formation]</span> et 
+        commencer à [résultat principal] dans [délai].
+      </p>
+      <a href="[LIEN_CHARIOW]" class="glow-btn inline-block bg-amber-500 hover:bg-amber-400 text-black font-black text-xl px-12 py-6 rounded-2xl">
+        Oui, je veux [résultat] →
+      </a>
+      <p class="text-gray-500 text-sm mt-4">Accès immédiat · Paiement sécurisé · Garantie [X] jours</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-8 px-4">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-sm">
+      <p>© 2025 [Votre Nom]. Tous droits réservés.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
+        <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a>
+        <a href="#" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="bg-[#0f0f0f] border-t border-amber-500/30 px-4 py-3">
+      <div class="max-w-4xl mx-auto flex items-center justify-between gap-4">
+        <div class="hidden sm:block">
+          <p class="text-white font-bold text-sm">[Nom de la formation]</p>
+          <p class="text-gray-400 text-xs">Offre de lancement — [XX 000] FCFA</p>
+        </div>
+        <a href="#offre" class="bg-amber-500 hover:bg-amber-400 text-black font-black text-sm px-6 py-3 rounded-xl whitespace-nowrap">
+          Accéder maintenant →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fade-in au scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) {
+          el.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Sticky CTA
+    const stickyCta = document.getElementById('stickyCta');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        stickyCta.classList.add('show');
+      } else {
+        stickyCta.classList.remove('show');
+      }
+    });
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = !answer.classList.contains('hidden');
+
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    }
+  </script>
+
+</body>
+</html>
